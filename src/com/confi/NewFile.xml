@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- LocalDate bean using factory method -->
+    <bean id="today" class="java.time.LocalDate" factory-method="now" />
+
+    <!-- Your custom bean -->
+    <bean id="sessionFinder" class="com.springbean.SessionFinder">
+        <property name="date" ref="today" />
+    </bean>
+
+</beans>
